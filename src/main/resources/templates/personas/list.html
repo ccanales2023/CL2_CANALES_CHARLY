@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Personas</title>
+    
+    <style>
+        body {
+            background-color: rgb(79, 204, 156);
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            color: navy;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid gray;
+        }
+        
+        th {
+            background-color: navy;
+            color: white;
+        }
+        
+        a {
+            color: navy;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Lista de personas</h1>
+    <a th:href="@{/personas/create}">Registrese</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Dni</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="persona : ${listaPersonas}">
+                <td th:text="${persona.id}"></td>
+                <td th:text="${persona.nombre}"></td>
+                <td th:text="${persona.apellido}"></td>
+                <td th:text="${persona.dni}"></td>
+                <td th:text="${persona.edad}"></td>
+                <td>
+                    <a th:href="@{/personas/{id}(id=${persona.id})}">Ver detalle</a>
+                </td>
+                <td>
+                    <a th:href="@{/personas/{id}/edit(id=${persona.id})}">Editar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

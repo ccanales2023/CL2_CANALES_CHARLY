@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel="stylesheet" href="/src/main/resources/static/Estilos.css">
+    <title>Mantenimiento Personas</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body {
+            background-color: #74e2be; /* Cambia el color de fondo según tus preferencias */
+        }
+        
+        .center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .center img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        
+        h1, p {
+            font-size: 30px; /* Ajusta el tamaño de fuente según tus preferencias */
+            color: black; /* Cambia el color del texto a negro */
+        }
+        
+        a {
+            font-size: 22px; /* Ajusta el tamaño de fuente de los enlaces según tus preferencias */
+            color: black; /* Cambia el color de los enlaces a negro */
+            text-decoration: none; /* Elimina la decoración subrayada de los enlaces */
+        }
+
+        .links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+    </style>
+    
+</head>
+<body>
+    <div class="center">
+        <div class="links" style="padding: 10px;">
+            <a th:href="@{/nosotros}" style="font-size: 22px; color: black; margin-right: 10px;">Nosotros</a>
+            <a th:href="@{/personas}" style="font-size: 22px; color: black; margin-left: 10px;">Registrese</a>
+        </div>
+    
+        <img src="/images/persona.jpg" alt="Imagen grande"><!-- Reemplaza "ruta_de_la_imagen.jpg" por la ruta de tu imagen -->
+    
+        <h1 style="font-size: 20px; color: black;">Bienvenidos a todos</h1>
+        <p style="font-size: 20px; color: black;">Dejanos tus datos y nosotros nos pondremos en contacto contigo</p>
+        <p style="font-size: 20px; color: black;">Atendemos las 24 horas.</p>
+    </div>
+    
+    
+    <footer>
+        &copy; <span th:text="${year}"></span> KYT S.A.C. Todos los derechos reservados.
+    </footer>
+</body>
+</html>
